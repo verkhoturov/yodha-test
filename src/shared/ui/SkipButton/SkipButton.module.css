@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 300px;
+  width: 100%;
+
+  background-color: transparent;
+  border: none;
+
+  font: inherit;
+  font-size: 15px;
+  color: #0d0626;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.arrow {
+  transform: rotate(-90deg);
+}

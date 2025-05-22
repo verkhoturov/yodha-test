@@ -1,0 +1,38 @@
+.contentWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  max-width: 760px;
+  width: 100%;
+}
+
+.title {
+  max-width: 575px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  color: #0d0626;
+}
+
+.description {
+  max-width: 575px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 23px;
+  color: #0d0626;
+}
+
+.cardsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -1,0 +1,20 @@
+.wrapInput {
+  width: auto;
+}
+
+.input {
+  min-width: 90px;
+  max-width: 140px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.input:required:invalid {
+  opacity: 0.4;
+}
+
+@media (max-width: 374px) {
+  .input {
+    min-width: 140px;
+  }
+}

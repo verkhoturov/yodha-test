@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 374px) {
+  .wrap {
+    flex-direction: column;
+  }
+}

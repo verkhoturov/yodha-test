@@ -1,0 +1,58 @@
+.item {
+  min-width: 240px;
+  max-width: 240px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid rgb(212, 194, 255);
+  background-color: rgb(254, 254, 254);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+@media (max-width: 414px) {
+  .item {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.column {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.item:hover {
+  border: 1px solid #8465ec;
+  background: #f4f0ff;
+}
+
+.active {
+  border: 1px solid #8465ec;
+  background: #f4f0ff;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.disabled:hover {
+  border: 1px solid #e5e5ea;
+  background: #fbfbfb;
+}
+
+.label {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 18px 24px;
+}

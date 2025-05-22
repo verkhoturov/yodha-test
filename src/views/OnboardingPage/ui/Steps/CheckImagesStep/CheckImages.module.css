@@ -1,0 +1,36 @@
+.caption {
+  margin-bottom: 50px;
+}
+
+.titleBefore {
+  color: #0d0626;
+  text-align: center;
+  font-size: 13px;
+  line-height: 28px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.title {
+  color: #0d0626;
+  text-align: center;
+  font-size: 18px;
+  line-height: 23px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

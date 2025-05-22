@@ -1,0 +1,44 @@
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 500px;
+  height: auto;
+}
+
+.caption {
+  margin: 20px 0;
+}
+
+.title {
+  color: #0d0626;
+  text-align: center;
+  line-height: 36px;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.content {
+  max-width: 366px;
+  margin: 0 auto;
+}
+
+.description {
+  color: #0d0626;
+  font-weight: 400;
+  text-align: center;
+  line-height: 23px;
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

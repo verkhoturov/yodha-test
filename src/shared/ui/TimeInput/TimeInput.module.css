@@ -1,0 +1,15 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.semicolon {
+  margin-top: 19.5px;
+}
+
+@media (max-width: 380px) {
+  .input {
+    min-width: 100px;
+  }
+}

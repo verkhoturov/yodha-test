@@ -1,0 +1,32 @@
+{
+  "name": "astral-survey",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier \"**/*.{ts,tsx,js,scss,css,html,md,mdx}\" --write"
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "axios": "^1.6.0",
+    "classnames": "^2.3.2",
+    "formik": "^2.4.5",
+    "lottie-react": "^2.4.0",
+    "next": "^14.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.25.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "prettier": "^3.5.3",
+    "typescript": "^5"
+  }
+}

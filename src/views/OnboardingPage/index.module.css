@@ -1,0 +1,19 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  /* padding-top: 60px; */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 50px 24px;
+
+  max-width: 464px;
+  width: 100%;
+  margin: 0 auto;
+
+  background-color: #fffbff;
+}

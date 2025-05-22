@@ -1,0 +1,683 @@
+{
+  "steps": [
+    {
+      "type": "initial",
+      "title": "Please do not rush while answering the questions.",
+      "description": "All answers will help us to get to know you and suggest personalized content.",
+      "buttonTitle": "Let's begin",
+      "buttonDescription": "We guarantee to keep your information private. As you continue, you will accept the <a href='#'>privacy policy</a>, the <a href='#'>purchase, cancellation and refund policy</a> and the <a href='#'>terms of conditions</a> of Astralcoach.",
+      "image": "/step-form/initial-image.svg"
+    },
+    {
+      "type": "check_images",
+      "name": "gender",
+      "valuesCount": 1,
+      "requiredCount": 1,
+      "titleBefore": "Before you begin",
+      "title": "What is your gender?",
+      "items": [
+        {
+          "imageName": "gender-female",
+          "label": "Female"
+        },
+        {
+          "imageName": "gender-male",
+          "label": "Male"
+        },
+        {
+          "imageName": "gender-none",
+          "label": "Don't want to\nspecify"
+        },
+        {
+          "imageName": "gender-lgbti",
+          "label": "LGBTI"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "relationship_status",
+      "title": "To help us understand you more, share your relationship status with us",
+      "items": [
+        {
+          "label": "Solo"
+        },
+        {
+          "label": "In a Partnership"
+        },
+        {
+          "label": "Wedded"
+        },
+        {
+          "label": "Complex Situation"
+        },
+        {
+          "label": "Undecided/Other"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "goal_status",
+      "title": "What is your desired objective",
+      "items": [
+        {
+          "label": "Discover ideal partner"
+        },
+        {
+          "label": "Pursue matrimony"
+        },
+        {
+          "label": "Enhance self-awareness"
+        },
+        {
+          "label": "Attain contentment"
+        },
+        {
+          "label": "Personal development"
+        },
+        {
+          "label": "Assess compatibility"
+        },
+        {
+          "label": "All of the above"
+        }
+      ]
+    },
+    {
+      "type": "between_result",
+      "image": "/step-form/steps/result-women-space.svg",
+      "title": "Excellent!",
+      "description": "Congratulations on defining your initial objective! We'll continue to learn more about you."
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "parent_status",
+      "title": "Do you have children?",
+      "items": [
+        {
+          "label": "Indeed"
+        },
+        {
+          "label": "Not at the moment"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "astralogy_status",
+      "title": "Tell us about your expertise in astrology",
+      "items": [
+        {
+          "label": "Adept"
+        },
+        {
+          "label": "Inquisitive"
+        },
+        {
+          "label": "Newcomer"
+        }
+      ]
+    },
+    {
+      "type": "date_input",
+      "name": "birthdate",
+      "title": "What is your date of birth?",
+      "image": "/step-form/birthday-preview.svg",
+      "buttonTitle": "Continue"
+    },
+    {
+      "type": "time_input",
+      "name": "birthtime",
+      "title": "Time of birth",
+      "buttonTitle": "Continue",
+      "skipButtonTitle": "I don't know"
+    },
+    {
+      "type": "text_input",
+      "name": "birthplace",
+      "title": "What is your place of birth?",
+      "inputPlaceholder": "Pick a location",
+      "buttonTitle": "Continue"
+    },
+    {
+      "type": "between_result",
+      "image": "/step-form/steps/result-women-space.svg",
+      "title": "Wonderful!",
+      "description": "We've assisted 689,464 fellow individuals born under the Sun sign of Virgo in discovering their ideal match, and we're eager to assist you as well!"
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "last_relationship",
+      "title": "What were your sentiments in your previous relationship?",
+      "items": [
+        {
+          "label": "I experienced dissatisfaction with certain aspects of my relationship"
+        },
+        {
+          "label": "I faced challenges in my relationship, but some aspects were positive"
+        },
+        {
+          "label": "I found contentment in my previous relationship"
+        },
+        {
+          "label": "I've yet to be in a relationship"
+        }
+      ]
+    },
+    {
+      "type": "between_result",
+      "title": "Exploring what leads to success often requires recognizing what doesn't.",
+      "description":
+        "We'll provide guidance on cultivating a joyful and enduring partnership with your future companion. Now, we require some details regarding your Personality Traits to delve further!"
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "misunderstood_people",
+      "title": "Are you inclined to focus on what's amiss rather than what's going well?",
+      "items": [
+        {
+          "label": "Extremely often"
+        },
+        {
+          "label": "Often"
+        },
+        {
+          "label": "Sometimes"
+        },
+        {
+          "label": "Seldom"
+        },
+        {
+          "label": "Almost never"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "criticism_status",
+      "title": "How do you respond to constructive feedback?",
+      "items": [
+        {
+          "label": "I welcome it openly"
+        },
+        {
+          "label": "I accept it occasionally"
+        },
+        {
+          "label": "I rarely take it to heart"
+        },
+        {
+          "label": "I'm completely unfazed by it"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "tend_to_overthink",
+      "title": "Do you tend to overthink?",
+      "items": [
+        {
+          "label": "Yes"
+        },
+        {
+          "label": "No"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_grid",
+      "name": "most_important",
+      "valuesCount": 4,
+      "requiredCount": 1,
+      "title": "What holds the highest value in your life?",
+      "description": "Kindly select the most fitting choices for you",
+      "items": [
+        {
+          "label": "Achievement"
+        },
+        {
+          "label": "Affection & Amour"
+        },
+        {
+          "label": "Consistency"
+        },
+        {
+          "label": "Independence"
+        },
+        {
+          "label": "Joy"
+        },
+        {
+          "label": "Well-being"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "Is emotional control tricky for you?",
+      "title": "Are you prone to excessive contemplation?",
+      "items": [
+        {
+          "label": "Affirmative"
+        },
+        {
+          "label": "Negative"
+        },
+        {
+          "label": "Occasionally"
+        },
+        {
+          "label": "Infrequently"
+        },
+        {
+          "label": "Never"
+        }
+      ]
+    },
+    {
+      "type": "between_result",
+      "title": "You're in good company!",
+      "description":
+        "Many individuals born under the sign of Virgo encounter challenges in managing their emotions due to their zodiac traits. No need to fret, we're equipped to assist!"
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "love_job",
+      "title": "How do you feel about your job?",
+      "items": [
+        {
+          "label": "I absolutely love it!"
+        },
+        {
+          "label": "I'm not currently working"
+        },
+        {
+          "label": "I dislike my job"
+        },
+        {
+          "label": "It's just a means to pay the bills"
+        },
+        {
+          "label": "I'm underpaid"
+        },
+        {
+          "label": "I'm not advancing professionally"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "know_what_want",
+      "title": "Are you usually certain about what you want?",
+      "items": [
+        {
+          "label": "Yes, absolutely!"
+        },
+        {
+          "label": "No, not really"
+        },
+        {
+          "label": "I'm unsure"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "relaxing_trouble",
+      "title": "Do you have difficulty relaxing?",
+      "items": [
+        {
+          "label": "Not at all"
+        },
+        {
+          "label": "Yes, quite often"
+        },
+        {
+          "label": "Sometimes"
+        },
+        {
+          "label": "Rarely"
+        }
+      ]
+    },
+    {
+      "type": "between_result",
+      "title": "You're on the brink!",
+      "description":
+        "Let's personalize your strategy by delving into Relationship Insights. Please don't rush your answers. Each response contributes to shaping your personalized guidance plan."
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "agree_with_statement_relationship",
+      "description": "In a relationship, intimacy is of utmost importance to me.",
+      "title": "What's your stance on the statement?",
+      "items": [
+        {
+          "label": "I strongly concur"
+        },
+        {
+          "label": "I agree"
+        },
+        {
+          "label": "I'm neutral"
+        },
+        {
+          "label": "I disagree"
+        },
+        {
+          "label": "I strongly disagree"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "feel_comfortable",
+      "description": "I'm at ease when interacting with acquaintances I've just met.",
+      "title": "What are your thoughts on the following statement?",
+      "items": [
+        {
+          "label": "I strongly concur"
+        },
+        {
+          "label": "I agree"
+        },
+        {
+          "label": "I'm neutral"
+        },
+        {
+          "label": "I disagree"
+        },
+        {
+          "label": "I strongly disagree"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "worry_not_good_enough",
+      "title": "Do you often worry that you’re not good enough?",
+      "items": [
+        {
+          "label": "Yes"
+        },
+        {
+          "label": "Sometimes"
+        },
+        {
+          "label": "Rarely"
+        },
+        {
+          "label": "Not at all"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "easily_get_angry",
+      "title": "Do you easily get angry or irritated?",
+      "items": [
+        {
+          "label": "Yes"
+        },
+        {
+          "label": "Sometimes"
+        },
+        {
+          "label": "Rarely"
+        },
+        {
+          "label": "Not at all"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "share_inner_self",
+      "title": "Do you share your inner self with people you like?",
+      "items": [
+        {
+          "label": "Yes"
+        },
+        {
+          "label": "No"
+        },
+        {
+          "label": "Not sure"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "remember_small_details",
+      "title": "Do you remember small details about the people who are important to you?",
+      "items": [
+        {
+          "label": "Yes"
+        },
+        {
+          "label": "Sometimes"
+        },
+        {
+          "label": "Rarely"
+        },
+        {
+          "label": "Not at all"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "ideal_date",
+      "title": "Describe your dream date experience",
+      "items": [
+        {
+          "label": "An elegant dinner at a fine restaurant"
+        },
+        {
+          "label": "A scenic hike in nature"
+        },
+        {
+          "label": "Conversations under the starry sky"
+        },
+        {
+          "label": "A leisurely walk in the park"
+        },
+        {
+          "label": "Thrilling skydiving adventure"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "future_partner_detail",
+      "title": "Would you describe your future partner as detail-oriented or a big-picture person?",
+      "items": [
+        {
+          "label": "Detail-oriented"
+        },
+        {
+          "label": "Big-picture"
+        },
+        {
+          "label": "A bit of both"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "ideal_partner_introvert",
+      "title": "Is your ideal partner an introvert or extrovert?",
+      "items": [
+        {
+          "label": "Introvert"
+        },
+        {
+          "label": "Extrovert"
+        },
+        {
+          "label": "A bit of both"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "relationship_goals_feel",
+      "title": "How do you perceive your relationship aspirations?",
+      "items": [
+        {
+          "label": "Hopeful! They are entirely attainable, with some support."
+        },
+        {
+          "label": "Cautious. I've faced challenges before, but I remain optimistic."
+        },
+        {
+          "label": "I'm somewhat apprehensive, to be honest."
+        },
+        {
+          "label": "Undecided / Unsure"
+        }
+      ]
+    },
+    {
+      "type": "between_result",
+      "title": "Welcome, Virgo! You're in the perfect spot!",
+      "description":
+        "Recognizing that your objective is within reach gives you an advantage. Let's continue to shape a guidance strategy based on your astrological blueprint."
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "partner_appreciation",
+      "description": "My partner makes me feel really appreciated.",
+      "title": "Do you agree with the statement below?",
+      "items": [
+        {
+          "label": "Strongly agree"
+        },
+        {
+          "label": "Agree"
+        },
+        {
+          "label": "Neutral"
+        },
+        {
+          "label": "Disagree"
+        },
+        {
+          "label": "Strongly disagree"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_column",
+      "name": "decision_making_style",
+      "title": "How do you make decisions?",
+      "items": [
+        {
+          "label": "Heart"
+        },
+        {
+          "label": "Head"
+        },
+        {
+          "label": "Both"
+        }
+      ]
+    },
+    {
+      "type": "check_buttons_grid",
+      "name": "hear_about_us",
+      "valuesCount": 2,
+      "requiredCount": 1,
+      "title": "Where did you hear about us?",
+      "description": "Please select one option that best describes how you heard about us.",
+      "items": [
+        {
+          "label": "Poster or Billboard"
+        },
+        {
+          "label": "Friend or Family"
+        },
+        {
+          "label": "Instagram"
+        },
+        {
+          "label": "Direct Mail or Package Insert"
+        },
+        {
+          "label": "Online TV or Streaming TV"
+        },
+        {
+          "label": "TV"
+        },
+        {
+          "label": "Radio"
+        },
+        {
+          "label": "Search Engine (Google, Bing, etc.)"
+        },
+        {
+          "label": "Newspaper or Magazine"
+        },
+        {
+          "label": "Facebook"
+        },
+        {
+          "label": "Blog Post or Website Review"
+        },
+        {
+          "label": "Podcast"
+        },
+        {
+          "label": "Influencer"
+        },
+        {
+          "label": "Youtube"
+        },
+        {
+          "label": "Pinterest"
+        },
+        {
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "type": "text_input",
+      "name": "name",
+      "title": "What is your name?",
+      "inputPlaceholder": "Enter yor name",
+      "buttonTitle": "Continue",
+      "inputLabel": "Name Surname"
+    },
+    {
+      "type": "steps_progress",
+      "items": [
+        {
+          "label": "Your answer are being analyzed."
+        },
+        {
+          "label": "The positions of the Sun, Moon and planets are calculated."
+        },
+        {
+          "label": "Results are being prepared."
+        },
+        {
+          "label": "Your account is being created."
+        }
+      ]
+    },
+    {
+      "type": "text_input",
+      "name": "email",
+      "title": "Your birth chart is ready.",
+      "description": "Which e-mail address should we send the reading?",
+      "inputPlaceholder": "Your e-mail address",
+      "buttonTitle": "Continue",
+      "inputLabel": "E-mail",
+      "inputDescription": "We respect your privacy and are committed to protecting your personal data. We will email you the information of your birth chart.",
+      "inputType": "email",
+      "action": "submit"
+    }
+  ]
+}

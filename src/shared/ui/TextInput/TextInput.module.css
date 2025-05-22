@@ -1,0 +1,55 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.label,
+.description {
+  margin-bottom: 5px;
+
+  font-size: 15px;
+  line-height: 19.5px;
+  color: #0d0626;
+  opacity: 0.6;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.input {
+  padding: 14.5px 20px;
+  width: 100%;
+
+  background-color: #fbfbfb;
+  border: 1px solid #e5e5ea;
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.input::placeholder {
+  color: #000000;
+  opacity: 0.4;
+}
+
+.input.withSuffixIcon {
+  padding-right: 40px;
+}
+
+.icon {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  pointer-events: none;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
