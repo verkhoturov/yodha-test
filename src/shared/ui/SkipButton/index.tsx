@@ -6,11 +6,10 @@ import styles from './SkipButton.module.css';
 
 import { ArrowIcon } from '@/shared/ui/Icons';
 
-interface SkipButtonProps
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {}
+type SkipButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
 export const SkipButton: React.FC<SkipButtonProps> = ({ className, children, ...props }) => {
   return (

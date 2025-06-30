@@ -8,7 +8,7 @@ import { TextInput, TextInputProps } from '../TextInput';
 
 import { ArrowIcon } from '@/shared/ui/Icons';
 
-export type SelectInputProps = {
+type SelectInputProps = {
   options: Array<string | number>;
 } & TextInputProps;
 
@@ -25,11 +25,12 @@ export const SelectInput: React.FC<SelectInputProps> = ({
       as="select"
       suffixIcon={<ArrowIcon className={styles.arrow} />}
       required
+      defaultValue={placeholder}
       {...props}>
-      <option value={''} disabled selected>
+      <option value={placeholder} disabled>
         {placeholder}
       </option>
-      {options.map(value => (
+      {options.map((value: string | number) => (
         <option key={value} value={value}>
           {value}
         </option>

@@ -7,40 +7,39 @@ import Image from 'next/image';
 import styles from './index.module.css';
 
 import type { BetweenResultStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
 import { PrimaryButton } from '@/shared/ui/PrimaryButton';
 
 interface BetweenResultStepProps {
   content: BetweenResultStepContent;
+  goToNext: () => void;
 }
 
-export const BetweenResultStep: React.FC<BetweenResultStepProps> = ({ content }) => {
+export const BetweenResultStep: React.FC<BetweenResultStepProps> = ({ content, goToNext }) => {
   const { image, title, description } = content;
-  const { nextStep } = useStepFormNavigation();
 
   return (
     <>
       {image && (
-        <section className={styles.image}>
+        <div className={styles.image}>
           <Image src={image} alt={title || 'image'} width={100} height={100} />
-        </section>
+        </div>
       )}
 
       {title && (
-        <section className={styles.caption}>
+        <div className={styles.caption}>
           <h2 className={styles.title}>{title}</h2>
-        </section>
+        </div>
       )}
 
       {description && (
-        <section className={styles.content}>
+        <div className={styles.content}>
           <p className={styles.description}>{description}</p>
-        </section>
+        </div>
       )}
 
-      <section className={styles.footer}>
-        <PrimaryButton onClick={nextStep}>Continue</PrimaryButton>
-      </section>
+      <div className={styles.footer}>
+        <PrimaryButton onClick={goToNext}>Continue</PrimaryButton>
+      </div>
     </>
   );
 };

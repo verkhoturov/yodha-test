@@ -8,17 +8,15 @@ import { useFormikContext } from 'formik';
 
 import styles from './index.module.css';
 
-import type { TextInputStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
-import { PrimaryButton } from '@/shared/ui/PrimaryButton';
-import { SkipButton } from '@/shared/ui/SkipButton';
-import { TextInput } from '@/shared/ui/TextInput';
+import type { OnboardingFormValues, TextInputStepContent } from '@/entities/onboarding';
+import { PrimaryButton, SkipButton, TextInput } from '@/shared/ui';
 
 interface TextInputStepProps {
   content: TextInputStepContent;
+  goToNext: () => void;
 }
 
-export const TextInputStep: React.FC<TextInputStepProps> = ({ content }) => {
+export const TextInputStep: React.FC<TextInputStepProps> = ({ content, goToNext }) => {
   const {
     name,
     title,
@@ -33,17 +31,16 @@ export const TextInputStep: React.FC<TextInputStepProps> = ({ content }) => {
     action,
   } = content;
 
-  const { nextStep } = useStepFormNavigation();
-  const { setFieldValue } = useFormikContext<any>();
+  const { setFieldValue, values } = useFormikContext<OnboardingFormValues>();
+
+  const value = values[name];
 
   const onSkipClick = () => {
-    setFieldValue(name, null);
-    nextStep();
+    setFieldValue(name, '-');
+    goToNext();
   };
 
-  const onClick = async () => {
-    nextStep();
-  };
+  const isDisabled = skipButtonTitle ? false : !Boolean(value);
 
   return (
     <div className={styles.wrap}>
@@ -65,7 +62,7 @@ export const TextInputStep: React.FC<TextInputStepProps> = ({ content }) => {
         placeholder={inputPlaceholder}
       />
 
-      <PrimaryButton className={styles.button} onClick={onClick}>
+      <PrimaryButton className={styles.button} onClick={goToNext} disabled={isDisabled}>
         {buttonTitle}
       </PrimaryButton>
 

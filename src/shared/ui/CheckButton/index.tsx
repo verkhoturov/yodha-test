@@ -8,7 +8,7 @@ import styles from './CheckButton.module.css';
 
 export type CheckImageProps = {
   label: string;
-  onChange?: any;
+  onChange?: React.MouseEventHandler<HTMLButtonElement>;
   checked?: boolean;
   disabled?: boolean;
   mode?: 'base' | 'column';

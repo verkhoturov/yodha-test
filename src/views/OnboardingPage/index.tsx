@@ -6,9 +6,9 @@ import styles from './index.module.css';
 
 import { FormContainer } from './ui/FormContainer';
 import { Steps } from './ui/Steps';
+import { useStepFormNavigation } from './useStepFormNavigation';
 
 import { OnboardingConfig, getOnboardingConfig } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
 
 // import { Header } from '@/shared/ui/Header';
 
@@ -17,38 +17,31 @@ interface OnboardingPageProps {
 }
 
 export const OnboardingPage = ({ slug }: OnboardingPageProps) => {
-  const { currentStep } = useStepFormNavigation();
-
   const [config, setConfig] = React.useState<OnboardingConfig | null>(null);
 
+  const { currentStep, goToNext } = useStepFormNavigation(slug, config);
+
   React.useEffect(() => {
-    getOnboardingConfig(slug)
-      .then(setConfig)
-      .catch(err => {
-        console.error(err);
-      });
+    getOnboardingConfig(slug).then(setConfig).catch(console.error);
   }, [slug]);
 
-  if (!config) return null;
+  if (!config || !currentStep) {
+    return <p>Loading...</p>;
+  }
 
-  const stepContent = config.steps[currentStep];
   const stepIndicatorHidden =
-    stepContent?.type === 'initial' ||
-    stepContent?.type === 'between_result' ||
-    stepContent?.type === 'steps_progress';
+    currentStep.type === 'initial' ||
+    currentStep.type === 'between_result' ||
+    currentStep.type === 'steps_progress';
 
   return (
     <main className={styles.main}>
       {/* <Header /> */}
 
       <section className={styles.content}>
-        {stepContent ? (
-          <FormContainer config={config} slug={slug} stepIndicatorHidden={stepIndicatorHidden}>
-            <Steps content={stepContent} />
-          </FormContainer>
-        ) : (
-          <p>No data for step number {currentStep}</p>
-        )}
+        <FormContainer config={config} slug={slug} stepIndicatorHidden={stepIndicatorHidden}>
+          <Steps currentStep={currentStep} goToNext={goToNext} />
+        </FormContainer>
       </section>
     </main>
   );

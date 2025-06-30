@@ -8,23 +8,21 @@ import { useFormikContext } from 'formik';
 
 import styles from './index.module.css';
 
-import type { DateInputStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
+import type { DateInputStepContent, OnboardingFormValues } from '@/entities/onboarding';
 import { DateInput, PrimaryButton, SkipButton } from '@/shared/ui';
 
 interface DateInputStepProps {
   content: DateInputStepContent;
+  goToNext: () => void;
 }
 
-export const DateInputStep: React.FC<DateInputStepProps> = ({ content }) => {
+export const DateInputStep: React.FC<DateInputStepProps> = ({ content, goToNext }) => {
   const { name, title, description, image, buttonTitle, skipButtonTitle } = content;
-
-  const { nextStep } = useStepFormNavigation();
-  const { setFieldValue } = useFormikContext<any>();
+  const { setFieldValue } = useFormikContext<OnboardingFormValues>();
 
   const onSkipClick = () => {
-    setFieldValue(name, null);
-    nextStep();
+    setFieldValue(name, '-');
+    goToNext();
   };
 
   return (
@@ -40,7 +38,7 @@ export const DateInputStep: React.FC<DateInputStepProps> = ({ content }) => {
 
       <DateInput className={styles.dateInput} name={name} />
 
-      <PrimaryButton className={styles.button} onClick={nextStep}>
+      <PrimaryButton className={styles.button} onClick={goToNext}>
         {buttonTitle}
       </PrimaryButton>
 

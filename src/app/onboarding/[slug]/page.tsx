@@ -1,11 +1,10 @@
 import { OnboardingPage } from '@/views/OnboardingPage';
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function Onboarding({ params }: Props) {
-  return <OnboardingPage slug={params.slug} />;
+export default async function Onboarding({ params }: Props) {
+  const { slug } = await params;
+  return <OnboardingPage slug={slug} />;
 }

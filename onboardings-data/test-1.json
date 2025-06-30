@@ -2,11 +2,13 @@
   "steps": [
     {
       "type": "initial",
+      "name": "start",
       "title": "Please do not rush while answering the questions.",
       "description": "All answers will help us to get to know you and suggest personalized content.",
       "buttonTitle": "Let's begin",
       "buttonDescription": "We guarantee to keep your information private. As you continue, you will accept the <a href='#'>privacy policy</a>, the <a href='#'>purchase, cancellation and refund policy</a> and the <a href='#'>terms of conditions</a> of Astralcoach.",
-      "image": "/step-form/initial-image.svg"
+      "image": "/step-form/initial-image.svg",
+      "next": "gender"
     },
     {
       "type": "check_images",
@@ -32,7 +34,8 @@
           "imageName": "gender-lgbti",
           "label": "LGBTI"
         }
-      ]
+      ],
+      "next": "relationship_status"
     },
     {
       "type": "check_buttons_column",
@@ -54,7 +57,8 @@
         {
           "label": "Undecided/Other"
         }
-      ]
+      ],
+      "next": "goal_status"
     },
     {
       "type": "check_buttons_column",
@@ -82,13 +86,16 @@
         {
           "label": "All of the above"
         }
-      ]
+      ],
+      "next": "between_result_excellent"
     },
     {
       "type": "between_result",
+      "name": "between_result_excellent",
       "image": "/step-form/steps/result-women-space.svg",
       "title": "Excellent!",
-      "description": "Congratulations on defining your initial objective! We'll continue to learn more about you."
+      "description": "Congratulations on defining your initial objective! We'll continue to learn more about you.",
+      "next": "parent_status"
     },
     {
       "type": "check_buttons_column",
@@ -101,7 +108,8 @@
         {
           "label": "Not at the moment"
         }
-      ]
+      ],
+      "next": "astralogy_status"
     },
     {
       "type": "check_buttons_column",
@@ -117,34 +125,42 @@
         {
           "label": "Newcomer"
         }
-      ]
+      ],
+      "next": "birthdate"
     },
     {
       "type": "date_input",
       "name": "birthdate",
       "title": "What is your date of birth?",
       "image": "/step-form/birthday-preview.svg",
-      "buttonTitle": "Continue"
+      "buttonTitle": "Continue",
+      "skipButtonTitle": "I don't know",
+      "next": "birthtime"
     },
     {
       "type": "time_input",
       "name": "birthtime",
       "title": "Time of birth",
       "buttonTitle": "Continue",
-      "skipButtonTitle": "I don't know"
+      "skipButtonTitle": "I don't know",
+      "next": "birthplace"
     },
     {
       "type": "text_input",
       "name": "birthplace",
       "title": "What is your place of birth?",
       "inputPlaceholder": "Pick a location",
-      "buttonTitle": "Continue"
+      "buttonTitle": "Continue",
+      "skipButtonTitle": "I don't know",
+      "next": "between_result_wonderful"
     },
     {
       "type": "between_result",
+      "name": "between_result_wonderful",
       "image": "/step-form/steps/result-women-space.svg",
       "title": "Wonderful!",
-      "description": "We've assisted 689,464 fellow individuals born under the Sun sign of Virgo in discovering their ideal match, and we're eager to assist you as well!"
+      "description": "We've assisted 689,464 fellow individuals born under the Sun sign of Virgo in discovering their ideal match, and we're eager to assist you as well!",
+      "next": "last_relationship"
     },
     {
       "type": "check_buttons_column",
@@ -163,13 +179,16 @@
         {
           "label": "I've yet to be in a relationship"
         }
-      ]
+      ],
+      "next": "between_result_exploring"
     },
     {
       "type": "between_result",
+      "name": "between_result_exploring",
       "title": "Exploring what leads to success often requires recognizing what doesn't.",
       "description":
-        "We'll provide guidance on cultivating a joyful and enduring partnership with your future companion. Now, we require some details regarding your Personality Traits to delve further!"
+        "We'll provide guidance on cultivating a joyful and enduring partnership with your future companion. Now, we require some details regarding your Personality Traits to delve further!",
+      "next": "misunderstood_people"
     },
     {
       "type": "check_buttons_column",
@@ -191,7 +210,8 @@
         {
           "label": "Almost never"
         }
-      ]
+      ],
+      "next": "criticism_status"
     },
     {
       "type": "check_buttons_column",
@@ -210,7 +230,8 @@
         {
           "label": "I'm completely unfazed by it"
         }
-      ]
+      ],
+      "next": "tend_to_overthink"
     },
     {
       "type": "check_buttons_column",
@@ -223,7 +244,8 @@
         {
           "label": "No"
         }
-      ]
+      ],
+      "next": "most_important"
     },
     {
       "type": "check_buttons_grid",
@@ -233,119 +255,78 @@
       "title": "What holds the highest value in your life?",
       "description": "Kindly select the most fitting choices for you",
       "items": [
-        {
-          "label": "Achievement"
-        },
-        {
-          "label": "Affection & Amour"
-        },
-        {
-          "label": "Consistency"
-        },
-        {
-          "label": "Independence"
-        },
-        {
-          "label": "Joy"
-        },
-        {
-          "label": "Well-being"
-        }
-      ]
+        { "label": "Achievement" },
+        { "label": "Affection & Amour" },
+        { "label": "Consistency" },
+        { "label": "Independence" },
+        { "label": "Joy" },
+        { "label": "Well-being" }
+      ],
+      "next": "is_emotional_control_tricky_for_you"
     },
     {
       "type": "check_buttons_column",
-      "name": "Is emotional control tricky for you?",
+      "name": "is_emotional_control_tricky_for_you",
       "title": "Are you prone to excessive contemplation?",
       "items": [
-        {
-          "label": "Affirmative"
-        },
-        {
-          "label": "Negative"
-        },
-        {
-          "label": "Occasionally"
-        },
-        {
-          "label": "Infrequently"
-        },
-        {
-          "label": "Never"
-        }
-      ]
+        { "label": "Affirmative" },
+        { "label": "Negative" },
+        { "label": "Occasionally" },
+        { "label": "Infrequently" },
+        { "label": "Never" }
+      ],
+      "next": "between_result_good_company"
     },
     {
       "type": "between_result",
+      "name": "between_result_good_company",
       "title": "You're in good company!",
-      "description":
-        "Many individuals born under the sign of Virgo encounter challenges in managing their emotions due to their zodiac traits. No need to fret, we're equipped to assist!"
+      "description": "Many individuals born under the sign of Virgo encounter challenges in managing their emotions due to their zodiac traits. No need to fret, we're equipped to assist!",
+      "next": "love_job"
     },
     {
       "type": "check_buttons_column",
       "name": "love_job",
       "title": "How do you feel about your job?",
       "items": [
-        {
-          "label": "I absolutely love it!"
-        },
-        {
-          "label": "I'm not currently working"
-        },
-        {
-          "label": "I dislike my job"
-        },
-        {
-          "label": "It's just a means to pay the bills"
-        },
-        {
-          "label": "I'm underpaid"
-        },
-        {
-          "label": "I'm not advancing professionally"
-        }
-      ]
+        { "label": "I absolutely love it!" },
+        { "label": "I'm not currently working" },
+        { "label": "I dislike my job" },
+        { "label": "It's just a means to pay the bills" },
+        { "label": "I'm underpaid" },
+        { "label": "I'm not advancing professionally" }
+      ],
+      "next": "know_what_want"
     },
     {
       "type": "check_buttons_column",
       "name": "know_what_want",
       "title": "Are you usually certain about what you want?",
       "items": [
-        {
-          "label": "Yes, absolutely!"
-        },
-        {
-          "label": "No, not really"
-        },
-        {
-          "label": "I'm unsure"
-        }
-      ]
+        { "label": "Yes, absolutely!" },
+        { "label": "No, not really" },
+        { "label": "I'm unsure" }
+      ],
+      "next": "relaxing_trouble"
     },
     {
       "type": "check_buttons_column",
       "name": "relaxing_trouble",
       "title": "Do you have difficulty relaxing?",
       "items": [
-        {
-          "label": "Not at all"
-        },
-        {
-          "label": "Yes, quite often"
-        },
-        {
-          "label": "Sometimes"
-        },
-        {
-          "label": "Rarely"
-        }
-      ]
+        { "label": "Not at all" },
+        { "label": "Yes, quite often" },
+        { "label": "Sometimes" },
+        { "label": "Rarely" }
+      ],
+      "next": "between_result_brink"
     },
     {
       "type": "between_result",
+      "name": "between_result_brink",
       "title": "You're on the brink!",
-      "description":
-        "Let's personalize your strategy by delving into Relationship Insights. Please don't rush your answers. Each response contributes to shaping your personalized guidance plan."
+      "description": "Let's personalize your strategy by delving into Relationship Insights. Please don't rush your answers. Each response contributes to shaping your personalized guidance plan.",
+      "next": "agree_with_statement_relationship"
     },
     {
       "type": "check_buttons_column",
@@ -353,22 +334,13 @@
       "description": "In a relationship, intimacy is of utmost importance to me.",
       "title": "What's your stance on the statement?",
       "items": [
-        {
-          "label": "I strongly concur"
-        },
-        {
-          "label": "I agree"
-        },
-        {
-          "label": "I'm neutral"
-        },
-        {
-          "label": "I disagree"
-        },
-        {
-          "label": "I strongly disagree"
-        }
-      ]
+        { "label": "I strongly concur" },
+        { "label": "I agree" },
+        { "label": "I'm neutral" },
+        { "label": "I disagree" },
+        { "label": "I strongly disagree" }
+      ],
+      "next": "feel_comfortable"
     },
     {
       "type": "check_buttons_column",
@@ -376,149 +348,95 @@
       "description": "I'm at ease when interacting with acquaintances I've just met.",
       "title": "What are your thoughts on the following statement?",
       "items": [
-        {
-          "label": "I strongly concur"
-        },
-        {
-          "label": "I agree"
-        },
-        {
-          "label": "I'm neutral"
-        },
-        {
-          "label": "I disagree"
-        },
-        {
-          "label": "I strongly disagree"
-        }
-      ]
+        { "label": "I strongly concur" },
+        { "label": "I agree" },
+        { "label": "I'm neutral" },
+        { "label": "I disagree" },
+        { "label": "I strongly disagree" }
+      ],
+      "next": "worry_not_good_enough"
     },
     {
       "type": "check_buttons_column",
       "name": "worry_not_good_enough",
       "title": "Do you often worry that you’re not good enough?",
       "items": [
-        {
-          "label": "Yes"
-        },
-        {
-          "label": "Sometimes"
-        },
-        {
-          "label": "Rarely"
-        },
-        {
-          "label": "Not at all"
-        }
-      ]
+        { "label": "Yes" },
+        { "label": "Sometimes" },
+        { "label": "Rarely" },
+        { "label": "Not at all" }
+      ],
+      "next": "easily_get_angry"
     },
     {
       "type": "check_buttons_column",
       "name": "easily_get_angry",
       "title": "Do you easily get angry or irritated?",
       "items": [
-        {
-          "label": "Yes"
-        },
-        {
-          "label": "Sometimes"
-        },
-        {
-          "label": "Rarely"
-        },
-        {
-          "label": "Not at all"
-        }
-      ]
+        { "label": "Yes" },
+        { "label": "Sometimes" },
+        { "label": "Rarely" },
+        { "label": "Not at all" }
+      ],
+      "next": "share_inner_self"
     },
     {
       "type": "check_buttons_column",
       "name": "share_inner_self",
       "title": "Do you share your inner self with people you like?",
       "items": [
-        {
-          "label": "Yes"
-        },
-        {
-          "label": "No"
-        },
-        {
-          "label": "Not sure"
-        }
-      ]
+        { "label": "Yes" },
+        { "label": "No" },
+        { "label": "Not sure" }
+      ],
+      "next": "remember_small_details"
     },
     {
       "type": "check_buttons_column",
       "name": "remember_small_details",
       "title": "Do you remember small details about the people who are important to you?",
       "items": [
-        {
-          "label": "Yes"
-        },
-        {
-          "label": "Sometimes"
-        },
-        {
-          "label": "Rarely"
-        },
-        {
-          "label": "Not at all"
-        }
-      ]
+        { "label": "Yes" },
+        { "label": "Sometimes" },
+        { "label": "Rarely" },
+        { "label": "Not at all" }
+      ],
+      "next": "ideal_date"
     },
     {
       "type": "check_buttons_column",
       "name": "ideal_date",
       "title": "Describe your dream date experience",
       "items": [
-        {
-          "label": "An elegant dinner at a fine restaurant"
-        },
-        {
-          "label": "A scenic hike in nature"
-        },
-        {
-          "label": "Conversations under the starry sky"
-        },
-        {
-          "label": "A leisurely walk in the park"
-        },
-        {
-          "label": "Thrilling skydiving adventure"
-        }
-      ]
+        { "label": "An elegant dinner at a fine restaurant" },
+        { "label": "A scenic hike in nature" },
+        { "label": "Conversations under the starry sky" },
+        { "label": "A leisurely walk in the park" },
+        { "label": "Thrilling skydiving adventure" }
+      ],
+      "next": "future_partner_detail"
     },
     {
       "type": "check_buttons_column",
       "name": "future_partner_detail",
       "title": "Would you describe your future partner as detail-oriented or a big-picture person?",
       "items": [
-        {
-          "label": "Detail-oriented"
-        },
-        {
-          "label": "Big-picture"
-        },
-        {
-          "label": "A bit of both"
-        }
-      ]
+        { "label": "Detail-oriented" },
+        { "label": "Big-picture" },
+        { "label": "A bit of both" }
+      ],
+      "next": "ideal_partner_introvert"
     },
     {
       "type": "check_buttons_column",
       "name": "ideal_partner_introvert",
       "title": "Is your ideal partner an introvert or extrovert?",
       "items": [
-        {
-          "label": "Introvert"
-        },
-        {
-          "label": "Extrovert"
-        },
-        {
-          "label": "A bit of both"
-        }
-      ]
+        { "label": "Introvert" },
+        { "label": "Extrovert" },
+        { "label": "A bit of both" }
+      ],
+      "next": "relationship_goals_feel"
     },
     {
       "type": "check_buttons_column",
@@ -537,13 +455,16 @@
         {
           "label": "Undecided / Unsure"
         }
-      ]
+      ],
+      "next": "between_result_spot"
     },
     {
       "type": "between_result",
+      "name": "between_result_spot",
       "title": "Welcome, Virgo! You're in the perfect spot!",
       "description":
-        "Recognizing that your objective is within reach gives you an advantage. Let's continue to shape a guidance strategy based on your astrological blueprint."
+        "Recognizing that your objective is within reach gives you an advantage. Let's continue to shape a guidance strategy based on your astrological blueprint.",
+      "next": "partner_appreciation"
     },
     {
       "type": "check_buttons_column",
@@ -551,38 +472,24 @@
       "description": "My partner makes me feel really appreciated.",
       "title": "Do you agree with the statement below?",
       "items": [
-        {
-          "label": "Strongly agree"
-        },
-        {
-          "label": "Agree"
-        },
-        {
-          "label": "Neutral"
-        },
-        {
-          "label": "Disagree"
-        },
-        {
-          "label": "Strongly disagree"
-        }
-      ]
+        { "label": "Strongly agree" },
+        { "label": "Agree" },
+        { "label": "Neutral" },
+        { "label": "Disagree" },
+        { "label": "Strongly disagree" }
+      ],
+      "next": "decision_making_style"
     },
     {
       "type": "check_buttons_column",
       "name": "decision_making_style",
       "title": "How do you make decisions?",
       "items": [
-        {
-          "label": "Heart"
-        },
-        {
-          "label": "Head"
-        },
-        {
-          "label": "Both"
-        }
-      ]
+        { "label": "Heart" },
+        { "label": "Head" },
+        { "label": "Both" }
+      ],
+      "next": "hear_about_us"
     },
     {
       "type": "check_buttons_grid",
@@ -592,55 +499,24 @@
       "title": "Where did you hear about us?",
       "description": "Please select one option that best describes how you heard about us.",
       "items": [
-        {
-          "label": "Poster or Billboard"
-        },
-        {
-          "label": "Friend or Family"
-        },
-        {
-          "label": "Instagram"
-        },
-        {
-          "label": "Direct Mail or Package Insert"
-        },
-        {
-          "label": "Online TV or Streaming TV"
-        },
-        {
-          "label": "TV"
-        },
-        {
-          "label": "Radio"
-        },
-        {
-          "label": "Search Engine (Google, Bing, etc.)"
-        },
-        {
-          "label": "Newspaper or Magazine"
-        },
-        {
-          "label": "Facebook"
-        },
-        {
-          "label": "Blog Post or Website Review"
-        },
-        {
-          "label": "Podcast"
-        },
-        {
-          "label": "Influencer"
-        },
-        {
-          "label": "Youtube"
-        },
-        {
-          "label": "Pinterest"
-        },
-        {
-          "label": "Other"
-        }
-      ]
+        { "label": "Poster or Billboard" },
+        { "label": "Friend or Family" },
+        { "label": "Instagram" },
+        { "label": "Direct Mail or Package Insert" },
+        { "label": "Online TV or Streaming TV" },
+        { "label": "TV" },
+        { "label": "Radio" },
+        { "label": "Search Engine (Google, Bing, etc.)" },
+        { "label": "Newspaper or Magazine" },
+        { "label": "Facebook" },
+        { "label": "Blog Post or Website Review" },
+        { "label": "Podcast" },
+        { "label": "Influencer" },
+        { "label": "Youtube" },
+        { "label": "Pinterest" },
+        { "label": "Other" }
+      ],
+      "next": "name"
     },
     {
       "type": "text_input",
@@ -648,24 +524,19 @@
       "title": "What is your name?",
       "inputPlaceholder": "Enter yor name",
       "buttonTitle": "Continue",
-      "inputLabel": "Name Surname"
+      "inputLabel": "Name Surname",
+      "next": "steps_progress_final"
     },
     {
       "type": "steps_progress",
+      "name": "steps_progress_final",
       "items": [
-        {
-          "label": "Your answer are being analyzed."
-        },
-        {
-          "label": "The positions of the Sun, Moon and planets are calculated."
-        },
-        {
-          "label": "Results are being prepared."
-        },
-        {
-          "label": "Your account is being created."
-        }
-      ]
+        { "label": "Your answer are being analyzed." },
+        { "label": "The positions of the Sun, Moon and planets are calculated." },
+        { "label": "Results are being prepared." },
+        { "label": "Your account is being created." }
+      ],
+      "next": "email"
     },
     {
       "type": "text_input",
@@ -677,7 +548,8 @@
       "inputLabel": "E-mail",
       "inputDescription": "We respect your privacy and are committed to protecting your personal data. We will email you the information of your birth chart.",
       "inputType": "email",
-      "action": "submit"
+      "action": "submit",
+      "next": ""
     }
   ]
 }

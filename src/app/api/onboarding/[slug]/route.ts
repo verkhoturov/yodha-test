@@ -5,14 +5,10 @@ import path from 'path';
 
 import { onboardingConfigSchema } from '@/entities/onboarding/model';
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+type Params = { params: Promise<{ slug: string }> };
 
 export async function GET(_: Request, { params }: Params) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // Абсолютный путь к JSON файлу
   const filePath = path.resolve(process.cwd(), 'onboardings-data', `${slug}.json`);
@@ -35,6 +31,9 @@ export async function GET(_: Request, { params }: Params) {
 
     return NextResponse.json(result.data);
   } catch (error) {
-    return NextResponse.json({ error: `Cannot load config for "${slug}"` }, { status: 404 });
+    return NextResponse.json(
+      { error: `Cannot load config for "${slug}", error: ${error}` },
+      { status: 404 },
+    );
   }
 }

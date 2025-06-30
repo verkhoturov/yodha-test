@@ -7,16 +7,14 @@ import Image from 'next/image';
 import styles from './index.module.css';
 
 import type { InitialStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
 import { PrimaryButton } from '@/shared/ui/';
 
 type InitialStepProps = {
   content: InitialStepContent;
+  goToNext: () => void;
 };
 
-export const InitialStep: React.FC<InitialStepProps> = ({ content }) => {
-  const { nextStep } = useStepFormNavigation();
-
+export const InitialStep: React.FC<InitialStepProps> = ({ content, goToNext }) => {
   const { title, description, buttonTitle, buttonDescription, image } = content;
 
   return (
@@ -28,7 +26,7 @@ export const InitialStep: React.FC<InitialStepProps> = ({ content }) => {
           <Image className={styles.mobileImage} src={image} width={330} height={200} alt="" />
         )}
 
-        <PrimaryButton className={styles.button} onClick={() => nextStep()}>
+        <PrimaryButton className={styles.button} onClick={goToNext}>
           {buttonTitle}
         </PrimaryButton>
 

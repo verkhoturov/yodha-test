@@ -9,24 +9,22 @@ import styles from './CheckImages.module.css';
 import { ImageCard } from './ImageCard';
 import type { CheckImageNames } from './types';
 
-import type { CheckImagesStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
+import type { CheckImagesStepContent, OnboardingFormValues } from '@/entities/onboarding';
 import { PrimaryButton } from '@/shared/ui';
 
 interface CheckImagesStepProps {
   content: CheckImagesStepContent;
+  goToNext: () => void;
 }
 
-export const CheckImagesStep: React.FC<CheckImagesStepProps> = ({ content }) => {
+export const CheckImagesStep: React.FC<CheckImagesStepProps> = ({ content, goToNext }) => {
   const { name, valuesCount, requiredCount, titleBefore, title, items } = content;
-
-  const { nextStep } = useStepFormNavigation();
-  const { values, handleChange } = useFormikContext<any>();
+  const { values, handleChange } = useFormikContext<OnboardingFormValues>();
 
   const value = values[name];
   const isMultiple = valuesCount > 1;
 
-  const selectedValuesCount = isMultiple ? value.filter((v: any) => v && v.label !== '').length : 1;
+  const selectedValuesCount = isMultiple && Array.isArray(value) ? value.filter(Boolean).length : 1;
 
   const isSelectedRequired = isMultiple ? selectedValuesCount >= requiredCount : false;
   const isSelectedAll = isMultiple ? selectedValuesCount >= valuesCount : false;
@@ -42,9 +40,10 @@ export const CheckImagesStep: React.FC<CheckImagesStepProps> = ({ content }) => 
         {items.map((item, index) => {
           if (!item.imageName) return null;
 
-          const checked = isMultiple
-            ? value?.some((v: any) => v === item.label)
-            : item.label === value;
+          const checked =
+            isMultiple && Array.isArray(value)
+              ? value?.some(v => v === item.label)
+              : item.label === value;
 
           const onClick = () => {
             const newValue = isMultiple && checked ? '' : item.label;
@@ -53,7 +52,7 @@ export const CheckImagesStep: React.FC<CheckImagesStepProps> = ({ content }) => 
               handleChange(`${name}.${index}`)(newValue);
             } else {
               handleChange(name)(newValue);
-              nextStep();
+              goToNext();
             }
           };
 
@@ -72,7 +71,7 @@ export const CheckImagesStep: React.FC<CheckImagesStepProps> = ({ content }) => 
 
       {isMultiple && (
         <div className={styles.footer}>
-          <PrimaryButton onClick={nextStep} disabled={!isSelectedRequired}>
+          <PrimaryButton onClick={goToNext} disabled={!isSelectedRequired}>
             Continue
           </PrimaryButton>
         </div>

@@ -6,25 +6,27 @@ import { useFormikContext } from 'formik';
 
 import styles from './index.module.css';
 
-import type { CheckButtonsGridStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
-import { CheckButton } from '@/shared/ui/CheckButton';
-import { PrimaryButton } from '@/shared/ui/PrimaryButton';
+import type { CheckButtonsGridStepContent, OnboardingFormValues } from '@/entities/onboarding';
+import { CheckButton, PrimaryButton } from '@/shared/ui';
 
 interface CheckButtonsGridStepProps {
   content: CheckButtonsGridStepContent;
+  goToNext: () => void;
 }
 
-export const CheckButtonsGridStep: React.FC<CheckButtonsGridStepProps> = ({ content }) => {
+export const CheckButtonsGridStep: React.FC<CheckButtonsGridStepProps> = ({
+  content,
+  goToNext,
+}) => {
   const { name, valuesCount, requiredCount, title, description, items } = content;
 
-  const { nextStep } = useStepFormNavigation();
-  const { values, handleChange } = useFormikContext<any>();
+  const { values, handleChange } = useFormikContext<OnboardingFormValues>();
 
   const value = values[name];
   const isMultiple = valuesCount > 1;
 
-  const selectedValuesCount = isMultiple ? value.filter((v: any) => v && v !== '').length : 1;
+  const selectedValuesCount =
+    isMultiple && Array.isArray(value) ? value.filter(v => v && v !== '').length : 1;
 
   const isSelectedRequired = isMultiple ? selectedValuesCount >= requiredCount : false;
   const isSelectedAll = isMultiple ? selectedValuesCount >= valuesCount : false;
@@ -54,7 +56,7 @@ export const CheckButtonsGridStep: React.FC<CheckButtonsGridStepProps> = ({ cont
               handleChange(`${name}.${index}`)(newValue);
             } else {
               handleChange(name)(newValue);
-              nextStep();
+              goToNext();
             }
           };
 
@@ -72,7 +74,7 @@ export const CheckButtonsGridStep: React.FC<CheckButtonsGridStepProps> = ({ cont
 
       {isMultiple && (
         <section className={styles.footer}>
-          <PrimaryButton onClick={nextStep} disabled={!isSelectedRequired}>
+          <PrimaryButton onClick={goToNext} disabled={!isSelectedRequired}>
             Continue
           </PrimaryButton>
         </section>

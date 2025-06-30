@@ -10,7 +10,6 @@ import styles from './index.module.css';
 import progressCircleAnimation from './progress-circle-animation.json';
 
 import type { StepsProgressStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
 
 const ANIMATION_DURATION = 10000;
 
@@ -36,11 +35,11 @@ const ProgressPercentCounter: React.FC = () => {
 
 interface ProgressStepProps {
   content: StepsProgressStepContent;
+  goToNext: () => void;
 }
 
-export const ProgressStep: React.FC<ProgressStepProps> = ({ content }) => {
+export const ProgressStep: React.FC<ProgressStepProps> = ({ content, goToNext }) => {
   const { items } = content;
-  const { nextStep } = useStepFormNavigation();
 
   const progressRef = React.useRef<LottieRefCurrentProps>(null);
   const [activeItemIndex, setActiveItemIndex] = React.useState(0);
@@ -57,7 +56,7 @@ export const ProgressStep: React.FC<ProgressStepProps> = ({ content }) => {
       setActiveItemIndex(prev => {
         if (prev === items.length - 1) {
           clearInterval(interval);
-          setTimeout(() => nextStep(), 1000);
+          setTimeout(() => goToNext(), 1000);
           return items.length;
         }
         return prev + 1;
@@ -65,7 +64,7 @@ export const ProgressStep: React.FC<ProgressStepProps> = ({ content }) => {
     }, ANIMATION_DURATION / items.length);
 
     return () => clearInterval(interval);
-  }, [items.length, nextStep]);
+  }, [items.length, goToNext]);
 
   return (
     <section className={styles.wrapper}>

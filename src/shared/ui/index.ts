@@ -6,3 +6,4 @@ export * from './DateInput';
 export * from './SkipButton';
 export * from './TextInput';
 export * from './TimeInput';
+export * from './CheckButton';

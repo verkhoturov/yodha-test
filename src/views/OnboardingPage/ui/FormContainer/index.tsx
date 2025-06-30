@@ -8,7 +8,8 @@ import styles from './index.module.css';
 
 import { StepIndicator } from '../StepIndicator';
 
-import type { OnboardingConfig, Step } from '@/entities/onboarding';
+import type { OnboardingConfig, OnboardingFormValues } from '@/entities/onboarding';
+import { STEP_TYPES } from '@/entities/onboarding';
 
 const multiSelectTypes = new Set(['check_images', 'check_buttons_grid']);
 
@@ -24,13 +25,19 @@ export const FormContainer: React.FC<FormContainerProps> = ({
   slug,
   stepIndicatorHidden,
 }) => {
-  const SAVE_VALUES_KEY = `onboarding-form-${slug}`;
+  const SAVE_VALUES_KEY = `onboarding-form-${slug}-values`;
 
   const getInitialFormValues = (config: OnboardingConfig) => {
     const values: Record<string, unknown> = {};
 
     config.steps.forEach(step => {
-      if ('name' in step && typeof step.name === 'string') {
+      if (
+        step.name &&
+        step.type !== STEP_TYPES.BetweenResult &&
+        step.type !== STEP_TYPES.StepsProgress &&
+        step.type !== STEP_TYPES.Initial &&
+        step.type !== STEP_TYPES.Final
+      ) {
         const isMulti = multiSelectTypes.has(step.type);
         values[step.name] = isMulti ? [] : '';
       }
@@ -52,7 +59,9 @@ export const FormContainer: React.FC<FormContainerProps> = ({
   }
 
   return (
-    <Formik initialValues={{ ...initialFormValues, ...savedValues }} onSubmit={() => {}}>
+    <Formik<OnboardingFormValues>
+      initialValues={{ ...initialFormValues, ...savedValues }}
+      onSubmit={() => {}}>
       {({ values }) => {
         if (typeof window !== 'undefined') {
           localStorage.setItem(SAVE_VALUES_KEY, JSON.stringify(values));

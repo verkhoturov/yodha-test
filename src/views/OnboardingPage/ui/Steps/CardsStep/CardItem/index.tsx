@@ -7,7 +7,12 @@ import styles from './index.module.css';
 // import { CardsPageItem } from '..';
 
 export const CardItem: React.FC<{
-  card: any; // CardsPageItem; // TO DO
+  card: {
+    title: string;
+    description: string;
+    buttonTitle: string;
+    listItems: string[]; // TO DO
+  }; // CardsPageItem; // TO DO
   onSelect: () => void;
   selected: boolean;
 }> = ({ card, onSelect, selected }) => {
@@ -17,8 +22,7 @@ export const CardItem: React.FC<{
       {card.description ? <p className={styles.description}>{card.description}</p> : null}
       {card.listItems ? (
         <ul className={styles.list}>
-          {// @ts-ignore // TO DO
-          card.listItems?.map((item, index) => (
+          {card.listItems?.map((item, index) => (
             <li className={styles.listItem} key={item + index}>
               {item}
             </li>

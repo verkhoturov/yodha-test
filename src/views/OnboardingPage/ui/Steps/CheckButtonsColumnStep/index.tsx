@@ -6,19 +6,20 @@ import { useFormikContext } from 'formik';
 
 import styles from './index.module.css';
 
-import type { CheckButtonsColumnStepContent } from '@/entities/onboarding';
-import { useStepFormNavigation } from '@/shared/hooks';
+import type { CheckButtonsColumnStepContent, OnboardingFormValues } from '@/entities/onboarding';
 import { CheckButton } from '@/shared/ui/CheckButton';
 
 interface CheckButtonsColumnStepProps {
   content: CheckButtonsColumnStepContent;
+  goToNext: () => void;
 }
 
-export const CheckButtonsColumnStep: React.FC<CheckButtonsColumnStepProps> = ({ content }) => {
+export const CheckButtonsColumnStep: React.FC<CheckButtonsColumnStepProps> = ({
+  content,
+  goToNext,
+}) => {
   const { name, title, description, items } = content;
-
-  const { nextStep } = useStepFormNavigation();
-  const { values, handleChange } = useFormikContext<any>();
+  const { values, handleChange } = useFormikContext<OnboardingFormValues>();
 
   const value = values[name];
 
@@ -40,7 +41,7 @@ export const CheckButtonsColumnStep: React.FC<CheckButtonsColumnStepProps> = ({ 
         {items.map((item, index) => {
           const onChange = () => {
             handleChange(name)(item.label);
-            nextStep();
+            goToNext();
           };
 
           return (
