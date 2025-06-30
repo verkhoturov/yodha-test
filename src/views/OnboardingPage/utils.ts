@@ -3,6 +3,7 @@ import type {
   Step,
 } from '@/entities/onboarding';
 
+/*
 const getAgeFromDate = (value: { day: string; month: string; year: string }): number => {
   const birthDate = new Date(Number(value.year), Number(value.month) - 1, Number(value.day));
   const now = new Date();
@@ -11,6 +12,7 @@ const getAgeFromDate = (value: { day: string; month: string; year: string }): nu
   const m = now.getMonth() - birthDate.getMonth();
   return m < 0 || (m === 0 && now.getDate() < birthDate.getDate()) ? age - 1 : age;
 };
+*/
 
 export const resolveNextStep = (
   step: Step, // values: OnboardingFormValues
