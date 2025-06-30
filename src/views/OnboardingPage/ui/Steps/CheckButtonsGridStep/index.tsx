@@ -47,7 +47,8 @@ export const CheckButtonsGridStep: React.FC<CheckButtonsGridStepProps> = ({
 
       <section className={styles.items}>
         {items.map((item, index) => {
-          const checked = isMultiple ? value?.includes(item.label) : item.label === value;
+          const checked =
+            isMultiple && Array.isArray(value) ? value?.includes(item.label) : item.label === value;
 
           const onChange = () => {
             const newValue = isMultiple && checked ? '' : item.label;
